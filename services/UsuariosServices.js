@@ -1,9 +1,21 @@
+const usuarios = require('../databases/usuarios.json');
 function listar(){
     // Seu código aqui
+    console.table(usuarios.map(
+        u => {
+            return {
+                id: u.id,
+                nome: u.nome,
+                email: u.email,
+            }
+        }
+    )); 
 }
 
 function salvar(arrayDeUsuarios){
     // Seu código aqui
+    const fs = require('fs');
+    fs.databases('./databases/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4))
 }
 
 function cadastrar(objeto){
