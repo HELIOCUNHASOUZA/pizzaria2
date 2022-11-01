@@ -20,14 +20,21 @@ function salvar(arrayDeUsuarios){
 
 function cadastrar(objeto){
 // Seu código aqui
+     Array.push(objeto)
+    fs.writeFileSync("./databases/usuaarios.json",JSON.stringify(objeto, null,4))
+    
 }
 
 function detalhar(idUsuario){
 // Seu código aqui
+   var usuarrio = usuarios.find(usuario => idUsuario === usuario.id);
+   console.log(idUsuario)
+
 }
 
 function remover(idDoUsuarioParaRemover){
     // Seu código aqui
+
 }
 
 function alterar(novosDados, idUsuario){
@@ -36,6 +43,9 @@ function alterar(novosDados, idUsuario){
 
 function addEndereco(novoEndereco, idUsuario){
     // Seu código aqui
+    var usuarrio = usuarios.find(usuario => idUsuario === usuario.id);
+    usuario.enderecos = novoEndereco.endercos;
+    console.log(usuario)
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
@@ -48,6 +58,9 @@ function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
 
 function addFormaDePagamento(novaFormaDePagamento, idUsuario){
     // Seu código aqui
+    addFormaDePagamento.push(novaFormaDePagamento);
+        return `a ${novaFormaDePagamento} foi adcionado`;
+    console.log(novaFormaDePagamento)
 }
 
 function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
@@ -61,6 +74,7 @@ function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento
 const UsuariosServices = {
     cadastrar,
     listar,
+    salvar,
     detalhar,
     remover,
     alterar,
