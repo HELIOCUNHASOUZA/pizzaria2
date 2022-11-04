@@ -1,3 +1,3 @@
 const UsuariosServices = require('..//services/UsuariosServices');
 
-UsuariosServices.listar();      
+UsuariosServices.removerEndereco(2)

@@ -1,3 +1,5 @@
 const UsuariosServices = require('..//services/UsuariosServices');
 
-UsuariosServices.addEndereco();
+UsuariosServices.addEndereco([{
+    enderecos: "rua dos teste"
+}]);
