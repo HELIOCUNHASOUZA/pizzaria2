@@ -68,7 +68,7 @@ function addEndereco(novoEndereco, idUsuario){
 function removerEndereco(posicaoDoEndereco, idUsuario){
 // Seu código aqui
     const usuarioId = usuarios.findIndex(usuario=> usuario.id == idUsuario)
-    let removerdoEndereco = usuarios[usuarioid].enderecos.splice(posicaoendereco, 1)
+    let UsuarioId = usuarios[usuarioid].enderecos.splice(posicaoEndereco, 1)
     salvar(usuarios)
 }
 
